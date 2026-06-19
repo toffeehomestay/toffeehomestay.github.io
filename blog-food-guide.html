@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ====================================================================
+     TEMPLATE BÀI VIẾT BLOG — TOFFEE HOMESTAY
+     ====================================================================
+     CÁCH TẠO BÀI MỚI:
+     1. Copy nguyên file này, đổi tên thành bài mới, vd: blog-tam-coc.html
+        (tên file KHÔNG dấu, KHÔNG khoảng trắng — dùng dấu gạch ngang).
+     2. Sửa nội dung trong các vùng có chú thích ★ bên dưới.
+     3. Thêm thẻ bài viết vào trang blog.html (xem hướng dẫn trong file đó).
+     4. Upload cả file .html mới và ảnh (nếu có) lên GitHub.
+
+     CÁC KHỐI NỘI DUNG CÓ SẴN (copy-dán trong phần <article> để dùng lại):
+       • Tiêu đề phụ:      <h2> ... </h2>
+       • Đoạn văn:          <p> ... </p>
+       • Ảnh:               <figure> ... </figure>
+       • Danh sách gạch đầu dòng:  <ul> ... </ul>
+       • Danh sách đánh số:        <ol> ... </ol>
+       • Trích dẫn:          <blockquote> ... </blockquote>
+       • Link trong câu:     <a href="..."> ... </a>
+       • Đường kẻ ngăn cách: <hr>
+     ==================================================================== -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ★ TIÊU ĐỀ TAB TRÌNH DUYỆT + MÔ TẢ (đổi cho mỗi bài, tốt cho Google) -->
+<title>Where to Eat Near Toffee Homestay: 16 Local Spots | Toffee Homestay</title>
+<meta name="description" content="Our favourite local restaurants and street-food spots near Toffee Homestay in Ninh Bình — goat meat, eel vermicelli, clay-pot rice and more, with addresses and walking distances.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2421;--ink-soft:#2e3a35;--cream:#f4efe6;--paper:#fbf8f2;
+    --brass:#b08d4f;--brass-deep:#8a6d39;--sage:#5e6f63;
+    --line:rgba(28,36,33,.14);--shadow:0 24px 60px -28px rgba(28,36,33,.4);
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Be Vietnam Pro',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.75;font-weight:300;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--brass-deep);text-decoration:underline;text-underline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* header (giống các trang khác) */
+  header{background:var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1200px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  .brand .mark{width:42px;height:42px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;font-weight:600;flex:none}
+  .brand b{font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.05;display:block}
+  .brand span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+  .menu{display:flex;align-items:center;gap:34px}
+  .menu a{font-size:.82rem;letter-spacing:.04em;color:#fff;text-decoration:none;transition:.3s}
+  .menu a:hover{color:var(--brass)}
+
+  /* hero ảnh bìa bài viết */
+  .post-hero{position:relative;height:54vh;min-height:360px;color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+  .post-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.62)}
+  .post-hero .inner{position:relative;padding:0 0 50px;width:100%}
+  .post-hero .cat{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#e7d9b8;font-weight:500}
+  .post-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,4rem);font-weight:600;line-height:1.05;margin:.5rem 0;max-width:20ch;text-shadow:0 2px 30px rgba(0,0,0,.4)}
+  .post-hero .byline{font-size:.86rem;opacity:.9}
+
+  /* thân bài viết — giới hạn bề ngang cho dễ đọc */
+  .article{max-width:760px;margin:0 auto;padding:64px 24px 90px;font-size:1.08rem;color:var(--ink-soft)}
+  .article h2{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--ink);margin:2.4rem 0 1rem;line-height:1.2}
+  .article h3{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--ink);margin:1.8rem 0 .8rem}
+  .article p{margin-bottom:1.3rem}
+  .article ul,.article ol{margin:0 0 1.4rem 1.3rem}
+  .article li{margin-bottom:.6rem;padding-left:.3rem}
+  .article ul li::marker{color:var(--brass)}
+  .article ol li::marker{color:var(--brass-deep);font-weight:600}
+  .article figure{margin:2rem 0}
+  .article figure img{width:100%;border-radius:4px;box-shadow:var(--shadow)}
+  .article figcaption{font-size:.86rem;color:var(--sage);text-align:center;margin-top:10px;font-style:italic}
+  .article blockquote{border-left:3px solid var(--brass);background:var(--cream);padding:18px 24px;margin:2rem 0;border-radius:0 4px 4px 0;font-family:var(--serif);font-size:1.35rem;line-height:1.5;color:var(--ink)}
+  .article hr{border:0;border-top:1px solid var(--line);margin:2.6rem 0}
+  .article .lead{font-size:1.25rem;color:var(--ink);font-weight:400;line-height:1.6;margin-bottom:1.8rem}
+  .back{display:inline-block;margin-bottom:0;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-deep);font-weight:600;text-decoration:none}
+
+  /* nút kêu gọi đặt phòng cuối bài */
+  .cta-box{max-width:760px;margin:0 auto 90px;padding:40px;background:var(--ink);color:#fff;border-radius:4px;text-align:center}
+  .cta-box h3{font-family:var(--serif);font-size:1.7rem;font-weight:600;margin-bottom:.5rem}
+  .cta-box p{opacity:.8;margin-bottom:1.4rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;padding:.95rem 1.9rem;border-radius:2px;background:var(--brass);color:#fff;text-decoration:none;transition:.3s}
+  .btn:hover{background:var(--brass-deep)}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--cream);padding:60px 0 30px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:18px;display:inline-flex}
+  footer p{opacity:.7;font-size:.9rem;margin-bottom:6px}
+  footer a{color:var(--brass)}
+  .copy{opacity:.5;font-size:.8rem;margin-top:18px}
+
+  @media(max-width:900px){.menu{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="mark">T</span>
+      <span><b>Toffee</b><span>Homestay · Ninh Bình</span></span>
+    </a>
+    <nav class="menu">
+      <a href="index.html#intro">About</a>
+      <a href="index.html#rooms">Rooms</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#location">Location</a>
+      <a href="blog.html">Guide Book</a>
+      <a href="index.html#booking">Booking</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ ẢNH BÌA + TIÊU ĐỀ BÀI ============ -->
+<!-- ★ Đổi ảnh bìa: thay link trong url(...) bên dưới.
+     ★ Đổi chuyên mục (cat), tiêu đề (h1) và dòng tác giả/ngày (byline). -->
+<section class="post-hero">
+  <div class="bg" style="background-image:url('https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-cover.jpg')"></div>
+  <div class="wrap inner">
+    <p class="cat">Food Guide</p>
+    <h1>Where to Eat Near Toffee Homestay</h1>
+    <p class="byline">By Toffee Homestay · 19 June 2026 · 5 min read</p>
+  </div>
+</section>
+
+<!-- ============ THÂN BÀI VIẾT ============ -->
+<article class="article">
+
+  <a href="blog.html" class="back">← Back to guide book</a>
+
+  <p class="lead">One of the best things about staying in Ninh Bình is the food — and you don't have to go far. Here are our favourite local restaurants and street-food spots near the homestay, from regional specialities to late-night snacks. Distances are measured from Toffee Homestay.</p>
+
+  <p>Tip: addresses are written the Vietnamese way. The easiest thing to do is copy the name into Google Maps, or just show this page to a <a href="https://zalo.me/0989309313" target="_blank" rel="noopener">Zalo</a> message and we'll point you the right way.</p>
+
+  <h2>Ninh Bình specialities</h2>
+  <p>If it's your first time here, start with the dishes the region is famous for — goat meat (<em>dê núi</em>), crispy scorched rice (<em>cơm cháy</em>) and eel.</p>
+
+  <figure><img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-de-nui.jpg" alt="Ninh Bình goat meat"><figcaption>Ninh Bình goat meat (dê núi) — a must-try regional speciality</figcaption></figure>
+  <h3>Nhà Hàng Đức Dê — goat hotpot & grills</h3>
+  <p>The classic spot for Ninh Bình goat meat, done many ways. Worth the short ride.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20H%C3%A0ng%20%C4%90%E1%BB%A9c%20D%C3%AA%2C%2029%20ng%C3%B5%20458%20Nguy%E1%BB%85n%20Hu%E1%BB%87%2C%20Nam%20B%C3%ACnh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 Số 29, ngõ 458 Nguyễn Huệ, Nam Bình · ~4.2 km · View on map →</a></p>
+
+  <h3>Nhà Hàng Cơm Niêu Việt Xưa — clay-pot rice</h3>
+  <p>Traditional clay-pot rice and home-style dishes, right by Kỳ Lân lake.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20H%C3%A0ng%20C%C6%A1m%20Ni%C3%AAu%20Vi%E1%BB%87t%20X%C6%B0a%2C%2080%20Tr%C3%A0ng%20An%2C%20T%C3%A2n%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 80 Đường Tràng An, Tân Thành · ~1.5 km (opposite Kỳ Lân lake) · View on map →</a></p>
+
+  <h3>Cơm Đốt Thố Trạng Nguyên — baked pot rice</h3>
+  <p>Another great choice for the famous baked rice pot.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20%C4%90%E1%BB%91t%20Th%E1%BB%91%20Tr%E1%BA%A1ng%20Nguy%C3%AAn%2C%20183%20L%C6%B0%C6%A1ng%20V%C4%83n%20Th%C4%83ng%2C%20%C4%90%C3%B4ng%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 183 Đường Lương Văn Thăng, Đông Thành · ~2.5 km · View on map →</a></p>
+
+  <h3>Miến lươn Thảo Linh — eel glass noodles</h3>
+  <p>Local favourite for eel vermicelli, right by the Hoa Lư Ancient Town area.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Mi%E1%BA%BFn%20l%C6%B0%C6%A1n%20Th%E1%BA%A3o%20Linh%2C%2016%20Tr%C3%A0ng%20An%2C%20T%C3%A2n%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 16-18 Đường Tràng An, Tân Thành · ~1.5 km · View on map →</a></p>
+
+  <h3>Nhà hàng Vũ Bảo — freshwater fish & specialities</h3>
+  <p>Known for <em>cá nhệch</em> (a regional fish dish) and other local specialities.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20h%C3%A0ng%20V%C5%A9%20B%E1%BA%A3o%2C%2037%20Nguy%E1%BB%85n%20Hu%E1%BB%87%2C%20Nam%20B%C3%ACnh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 Số 37 Nguyễn Huệ, Nam Bình · ~4.5 km · View on map →</a></p>
+
+  <hr>
+
+  <h2>Rice, noodles & comfort food</h2>
+
+  <figure><img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-bun-cha.jpg" alt="Vietnamese rice and noodle dishes"><figcaption>Grilled pork vermicelli (bún chả) and other comfort classics</figcaption></figure>
+  <h3>Bún chả Tình Mai</h3>
+  <p>Grilled pork with vermicelli — a Vietnamese lunch classic.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20ch%E1%BA%A3%20T%C3%ACnh%20Mai%2C%207%20Ph%E1%BA%A1m%20H%E1%BB%93ng%20Th%C3%A1i%2C%20V%C3%A2n%20Giang%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 07 Phạm Hồng Thái, Vân Giang · View on map →</a></p>
+
+  <h3>Bún mọc Tố Như</h3>
+  <p>Comforting pork-and-mushroom ball noodle soup.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20m%E1%BB%8Dc%20T%E1%BB%91%20Nh%C6%B0%2C%2074%20L%C3%AA%20H%E1%BB%93ng%20Phong%2C%20%C4%90%C3%B4ng%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 74 Lê Hồng Phong, Đông Thành · ~2.7 km · View on map →</a></p>
+
+  <h3>Cơm tấm sườn nướng Út Thương</h3>
+  <p>Broken rice with grilled pork ribs — hearty and satisfying.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20t%E1%BA%A5m%20s%C6%B0%E1%BB%9Dn%20n%C6%B0%E1%BB%9Bng%20%C3%9At%20Th%C6%B0%C6%A1ng%2C%2045%20%C4%90inh%20Ti%C3%AAn%20Ho%C3%A0ng%2C%20%C4%90%C3%B4ng%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 45 Đinh Tiên Hoàng, Đông Thành · ~3 km · View on map →</a></p>
+
+  <h3>Bánh cuốn chả nóng bà Liên</h3>
+  <p>Steamed rice rolls served hot with grilled pork — a great breakfast.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20cu%E1%BB%91n%20ch%E1%BA%A3%20n%C3%B3ng%20b%C3%A0%20Li%C3%AAn%2C%2015%20V%C3%B5%20Th%E1%BB%8B%20S%C3%A1u%2C%20%C4%90%C3%B4ng%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 15 Võ Thị Sáu, Đông Thành · ~2.5 km · View on map →</a></p>
+
+  <hr>
+
+  <h2>Street food & snacks</h2>
+  <p>For something lighter, a late-night bite, or dessert.</p>
+
+  <figure><img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-street.jpg" alt="Vietnamese street food and snacks"><figcaption>Street snacks — rice-paper salad, grilled skewers and more</figcaption></figure>
+  <h3>Chân gà nướng & Ăn vặt Phố 8</h3>
+  <p>Grilled chicken feet and a spread of Vietnamese snacks.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A2n%20g%C3%A0%20n%C6%B0%E1%BB%9Bng%20%C4%82n%20v%E1%BA%B7t%20Ph%E1%BB%91%208%2C%20V%C3%A2n%20Giang%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 Khu Phố 8, Phường Vân Giang · ~2.2 km · View on map →</a></p>
+
+  <h3>Bánh tráng trộn & Ăn vặt Bống Bống</h3>
+  <p>Rice-paper salad and street snacks — fun and cheap.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20tr%C3%A1ng%20tr%E1%BB%99n%20B%E1%BB%91ng%20B%E1%BB%91ng%2C%2062%20L%C6%B0%C6%A1ng%20V%C4%83n%20T%E1%BB%A5y%2C%20T%C3%A2n%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 62 Lương Văn Tụy, Tân Thành · ~2 km · View on map →</a></p>
+
+  <h3>Bánh mỳ cay Hải Phòng chính gốc</h3>
+  <p>Spicy Hải Phòng-style mini baguettes.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20m%E1%BB%B3%20cay%20H%E1%BA%A3i%20Ph%C3%B2ng%2C%2052%20%C4%90inh%20T%E1%BA%A5t%20Mi%E1%BB%85n%2C%20T%C3%A2n%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 52 Đinh Tất Miễn, Tân Thành · ~1.8 km · View on map →</a></p>
+
+  <h3>Ốc luộc mắm gừng bà Hoàng</h3>
+  <p>Boiled snails with ginger fish sauce — a beloved evening snack.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=%E1%BB%90c%20lu%E1%BB%99c%20m%E1%BA%AFm%20g%E1%BB%ABng%20b%C3%A0%20Ho%C3%A0ng%2C%20T%C3%B4n%20%C4%90%E1%BB%A9c%20Th%E1%BA%AFng%2C%20%C4%90%C3%B4ng%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 Ngõ 2 Tôn Đức Thắng, Đông Thành · ~2.8 km · View on map →</a></p>
+
+  <h3>Chợ Quê Quán</h3>
+  <p>Countryside-style eatery with a range of local dishes.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Ch%E1%BB%A3%20Qu%C3%AA%20Qu%C3%A1n%2C%20Tr%C3%A0ng%20An%202%2C%20T%C3%A2n%20Trung%2C%20T%C3%A2n%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 Tràng An 2, Tân Trung, Tân Thành · ~1.8 km · View on map →</a></p>
+
+  <h3>Chè Bưởi & Kem Xôi Huế — dessert</h3>
+  <p>Finish with sweet pomelo chè and Huế-style sticky-rice ice cream.<br>
+  <a href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A8%20B%C6%B0%E1%BB%9Fi%20Kem%20X%C3%B4i%20Hu%E1%BA%BF%2C%2014%20ng%C3%B5%2010%20Tr%C3%A0ng%20An%2C%20T%C3%A2n%20Th%C3%A0nh%2C%20Ninh%20B%C3%ACnh" target="_blank" rel="noopener" style="color:var(--brass-deep);font-weight:600">📍 14 ngõ 10 Tràng An, Tân Thành · ~1.4 km · View on map →</a></p>
+
+  <hr>
+
+  <blockquote>"Not sure what to try first? Message us — we're happy to recommend something based on what you're in the mood for."</blockquote>
+
+  <p>Most of these are a short scooter ride or taxi away. If you'd like to rent a scooter (150k/day automatic, 130k manual) or arrange a car, just let us know at reception or on <a href="https://zalo.me/0989309313" target="_blank" rel="noopener">Zalo</a> / <a href="https://wa.me/84989309313" target="_blank" rel="noopener">WhatsApp</a>.</p>
+
+  <a href="blog.html" class="back">← Back to guide book</a>
+
+</article>
+
+<!-- ============ KÊU GỌI ĐẶT PHÒNG (giữ nguyên ở cuối mọi bài) ============ -->
+<section class="cta-box">
+  <h3>Planning a trip to Ninh Bình?</h3>
+  <p>Stay with us — minutes from everything in this guide.</p>
+  <a href="index.html#rooms" class="btn">See our rooms</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="mark">T</span>
+      <span><b>Toffee</b><span>Homestay · Ninh Bình</span></span>
+    </a>
+    <p>144 Trần Phú, Hoa Lư, Ninh Bình</p>
+    <p>Hotline / Zalo / WhatsApp: <a href="tel:0989309313">0989 309 313</a></p>
+    <p class="copy">© 2026 Toffee Homestay Ninh Bình. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -70,12 +70,13 @@
   .amen{background:var(--ink);color:var(--cream);padding:110px 0}
   .amen .eyebrow{color:var(--brass)}
   .amen h2.title{color:#fff}
-  .amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:2.5rem}
-  .amen-card{background:var(--ink);padding:34px 26px;transition:.35s}
+  .amen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:2.5rem}
+  .amen-card{background:var(--ink);padding:20px 22px;transition:.35s}
   .amen-card:hover{background:var(--ink-soft)}
-  .amen-card .ic{font-family:var(--serif);font-size:1.4rem;color:var(--brass);margin-bottom:16px}
-  .amen-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:.4rem}
-  .amen-card p{font-size:.88rem;opacity:.72;font-weight:300}
+  .amen-card .ic{display:none}
+  .amen-card h3{font-family:var(--serif);font-size:1.12rem;font-weight:600;margin-bottom:.3rem;display:flex;align-items:center;gap:8px}
+  .amen-card h3::before{content:"✦";color:var(--brass);font-size:.9rem}
+  .amen-card p{font-size:.82rem;opacity:.68;font-weight:300;line-height:1.5}
 
   .rooms{padding:120px 0}
   .rooms-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:3rem}
@@ -201,6 +202,27 @@
   .float .za{background:#0068ff}
   .float .wa{background:#25d366}
 
+  /* guide book teaser (home) */
+  .guide{padding:110px 0;background:var(--cream)}
+  .guide-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:3rem}
+  .guide-head p{max-width:42ch;color:var(--ink-soft)}
+  .guide-grid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--brass) transparent}
+  .guide-grid::-webkit-scrollbar{height:6px}
+  .guide-grid::-webkit-scrollbar-thumb{background:var(--brass);border-radius:3px}
+  .guide-grid::-webkit-scrollbar-track{background:rgba(28,36,33,.08)}
+  .gcard{flex:0 0 330px;max-width:330px;scroll-snap-align:start;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.35s}
+  .gcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .gcard-img{height:200px;overflow:hidden}
+  .gcard-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .gcard:hover .gcard-img img{transform:scale(1.06)}
+  .gcard-body{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
+  .gcard .meta{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-deep);margin-bottom:8px}
+  .gcard h3{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;margin-bottom:8px}
+  .gcard p{font-size:.9rem;color:var(--ink-soft);flex:1}
+  .gcard .more{margin-top:14px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-deep);font-weight:600}
+  .guide-hint{font-size:.78rem;color:var(--sage);letter-spacing:.05em;margin-top:6px}
+  @media(max-width:600px){.gcard{flex:0 0 82%;max-width:82%}}
+
   @media(max-width:1000px){.room-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:900px){
     .menu{position:fixed;inset:0 0 0 30%;background:var(--ink);flex-direction:column;justify-content:center;gap:26px;transform:translateX(100%);transition:.35s;padding:40px}
@@ -234,6 +256,7 @@
       <a href="#rooms">Rooms</a>
       <a href="#gallery">Gallery</a>
       <a href="#location">Location</a>
+      <a href="blog.html">Guide Book</a>
       <a href="#booking">Booking</a>
       <a href="tel:0989309313" class="nav-call">☎ 0989 309 313</a>
     </nav>
@@ -288,6 +311,8 @@
       <div class="amen-card"><div class="ic">✦</div><h3>Shared Kitchen</h3><p>Cook your own meals in the communal kitchen.</p></div>
       <div class="amen-card"><div class="ic">✦</div><h3>Free Filtered Water</h3><p>Unlimited clean drinking water, on us.</p></div>
       <div class="amen-card"><div class="ic">✦</div><h3>Free Luggage Storage</h3><p>Drop your bags before check-in or after checkout.</p></div>
+      <div class="amen-card"><div class="ic">✦</div><h3>Scooter Rental</h3><p>Automatic 150k / manual 130k VND per day — explore at your own pace.</p></div>
+      <div class="amen-card"><div class="ic">✦</div><h3>Airport Transfer</h3><p>Private car to the airport from just 900k VND.</p></div>
     </div>
   </div>
 </section>
@@ -338,6 +363,40 @@
   </div>
 </section>
 
+<section class="location" id="location">
+  <div class="wrap">
+    <p class="eyebrow">Location</p>
+    <h2 class="title">Beautifully central</h2>
+    <div class="loc-grid">
+      <div>
+        <p style="color:var(--ink-soft);max-width:46ch">Tucked in a quiet, leafy neighbourhood yet just minutes from the train station and Ninh Bình's most famous sights.</p>
+        <div class="loc-addr">
+          <span class="pic">📍</span>
+          <div><b>144 Trần Phú, Hoa Lư</b><br>Ninh Bình 430000, Vietnam</div>
+        </div>
+        <div class="loc-list">
+          <div class="row"><span>Ninh Bình Railway Station</span><b>10 min</b></div>
+          <div class="row"><span>Hoa Lu Ancient Town</span><b>5 min</b></div>
+          <div class="row"><span>Trang An</span><b>15 min</b></div>
+          <div class="row"><span>Tam Coc</span><b>10 min</b></div>
+        </div>
+        <a class="btn btn-fill" style="margin-top:1.6rem" href="https://maps.app.goo.gl/zGqVvJBMXdSasPYS6" target="_blank" rel="noopener">Open in Google Maps →</a>
+      </div>
+      <div class="map-box">
+        <a class="map-open" href="https://maps.app.goo.gl/zGqVvJBMXdSasPYS6" target="_blank" rel="noopener">⤢ Open in Maps</a>
+        <iframe class="loc-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=20.2501015,105.9714434&z=16&output=embed"
+          title="Toffee Homestay location map"></iframe>
+        <div class="map-actions">
+          <a class="ph" href="tel:0989309313" title="Call">☎</a>
+          <a class="za" href="https://zalo.me/0989309313" target="_blank" rel="noopener" title="Zalo">Zalo</a>
+          <a class="wa" href="https://wa.me/84989309313" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="booking" id="booking">
   <div class="booking-bg"></div>
   <div class="wrap booking-inner">
@@ -358,6 +417,7 @@
           <li><span class="pic">→</span><span><b>Late stay</b> 50,000 VND per extra hour</span></li>
           <li><span class="pic">→</span><span><b>Self check-in</b> with secure lockbox</span></li>
           <li><span class="pic">→</span><span><b>Free</b> luggage storage before & after your stay</span></li>
+          <li><span class="pic">★</span><span><b>20k VND voucher</b> for a 5-star review with a comment or photo on Airbnb or Google</span></li>
         </ul>
         <p class="note">Rooms are rated 5.0 on Airbnb · 100% response rate</p>
       </div>
@@ -413,36 +473,75 @@
   </div>
 </section>
 
-<section class="location" id="location">
+
+<section class="guide" id="guide">
   <div class="wrap">
-    <p class="eyebrow">Location</p>
-    <h2 class="title">Beautifully central</h2>
-    <div class="loc-grid">
+    <div class="guide-head">
       <div>
-        <p style="color:var(--ink-soft);max-width:46ch">Tucked in a quiet, leafy neighbourhood yet just minutes from the train station and Ninh Bình's most famous sights.</p>
-        <div class="loc-addr">
-          <span class="pic">📍</span>
-          <div><b>144 Trần Phú, Hoa Lư</b><br>Ninh Bình 430000, Vietnam</div>
-        </div>
-        <div class="loc-list">
-          <div class="row"><span>Ninh Bình Railway Station</span><b>10 min</b></div>
-          <div class="row"><span>Hoa Lu Ancient Town</span><b>5 min</b></div>
-          <div class="row"><span>Trang An</span><b>15 min</b></div>
-          <div class="row"><span>Tam Coc</span><b>10 min</b></div>
-        </div>
-        <a class="btn btn-fill" style="margin-top:1.6rem" href="https://maps.app.goo.gl/zGqVvJBMXdSasPYS6" target="_blank" rel="noopener">Open in Google Maps →</a>
+        <p class="eyebrow">Toffee Guide Book</p>
+        <h2 class="title">Tips for your trip</h2>
       </div>
-      <div class="map-box">
-        <a class="map-open" href="https://maps.app.goo.gl/zGqVvJBMXdSasPYS6" target="_blank" rel="noopener">⤢ Open in Maps</a>
-        <iframe class="loc-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=20.2501015,105.9714434&z=16&output=embed"
-          title="Toffee Homestay location map"></iframe>
-        <div class="map-actions">
-          <a class="ph" href="tel:0989309313" title="Call">☎</a>
-          <a class="za" href="https://zalo.me/0989309313" target="_blank" rel="noopener" title="Zalo">Zalo</a>
-          <a class="wa" href="https://wa.me/84989309313" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+      <p>Local food, itineraries and practical tips to help you make the most of Ninh Bình.</p>
+    </div>
+    <div class="guide-grid">
+      <article class="gcard">
+        <a href="blog-food-guide.html" class="gcard-img"><img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-cover.jpg" alt="Where to eat near Toffee Homestay"></a>
+        <div class="gcard-body">
+          <span class="meta">Food Guide</span>
+          <h3>Where to Eat Near Toffee Homestay</h3>
+          <p>16 local restaurants and street-food spots near the homestay — with addresses and maps.</p>
+          <a href="blog-food-guide.html" class="more">Read more →</a>
         </div>
-      </div>
+      </article>
+      <article class="gcard">
+        <a href="blog-post-template.html" class="gcard-img"><img src="https://placehold.co/600x400/1c2421/b08d4f?text=guide-2.jpg" alt="Guide 2"></a>
+        <div class="gcard-body">
+          <span class="meta">Food</span>
+          <h3>5 Local Dishes You Must Try in Ninh Bình</h3>
+          <p>Goat meat, crispy rice, mountain snails — and where to find the best of each near the homestay.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+      <article class="gcard">
+        <a href="blog-post-template.html" class="gcard-img"><img src="https://placehold.co/600x400/1c2421/b08d4f?text=guide-3.jpg" alt="Guide 3"></a>
+        <div class="gcard-body">
+          <span class="meta">Tips</span>
+          <h3>Getting Around Ninh Bình by Scooter</h3>
+          <p>Renting, parking and the most scenic routes to ride during your stay.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+      <article class="gcard">
+        <a href="blog-post-template.html" class="gcard-img"><img src="https://placehold.co/600x400/1c2421/b08d4f?text=guide-3.jpg" alt="Guide 3"></a>
+        <div class="gcard-body">
+          <span class="meta">Tips</span>
+          <h3>Getting Around Ninh Bình by Scooter</h3>
+          <p>Renting, parking and the most scenic routes to ride during your stay.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+      <article class="gcard">
+        <a href="blog-post-template.html" class="gcard-img"><img src="https://placehold.co/600x400/1c2421/b08d4f?text=guide-4.jpg" alt="Guide 4"></a>
+        <div class="gcard-body">
+          <span class="meta">Nature</span>
+          <h3>Best Time to Visit Tam Coc's Rice Fields</h3>
+          <p>The golden rice season is short but spectacular — here's when to come.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+      <article class="gcard">
+        <a href="blog-post-template.html" class="gcard-img"><img src="https://placehold.co/600x400/1c2421/b08d4f?text=guide-5.jpg" alt="Guide 5"></a>
+        <div class="gcard-body">
+          <span class="meta">Tips</span>
+          <h3>How to Get from Hanoi to Ninh Bình</h3>
+          <p>Train, bus or private car — pros, cons and prices for every option.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+    </div>
+    <p class="guide-hint">← Swipe to see more guides →</p>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="blog.html" class="btn btn-fill">View all guides →</a>
     </div>
   </div>
 </section>
@@ -462,6 +561,7 @@
       <a href="#rooms">Rooms</a>
       <a href="#gallery">Gallery</a>
       <a href="#location">Location</a>
+      <a href="blog.html">Guide Book</a>
       <a href="#booking">Booking</a>
     </div>
     <div class="foot-col">

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Book | Toffee Homestay Ninh Bình</title>
+<meta name="description" content="Travel tips, local food guides and itineraries for your stay in Ninh Bình — from the team at Toffee Homestay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2421;--ink-soft:#2e3a35;--cream:#f4efe6;--paper:#fbf8f2;
+    --brass:#b08d4f;--brass-deep:#8a6d39;--sage:#5e6f63;
+    --line:rgba(28,36,33,.14);--shadow:0 24px 60px -28px rgba(28,36,33,.4);
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Be Vietnam Pro',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-deep);font-weight:500}
+
+  /* header */
+  header{background:var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1200px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand .mark{width:42px;height:42px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;font-weight:600;flex:none}
+  .brand b{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:.02em;line-height:1.05;display:block}
+  .brand span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+  .menu{display:flex;align-items:center;gap:34px}
+  .menu a{font-size:.82rem;letter-spacing:.04em;color:#fff;transition:.3s}
+  .menu a:hover{color:var(--brass)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer}
+  .burger span{width:26px;height:2px;background:#fff}
+
+  /* page head */
+  .page-head{padding:80px 0 50px;text-align:center;background:var(--cream);border-bottom:1px solid var(--line)}
+  .page-head h1{font-family:var(--serif);font-size:clamp(2.4rem,6vw,4rem);font-weight:600;margin:.4rem 0 .6rem}
+  .page-head p{color:var(--ink-soft);max-width:50ch;margin:0 auto}
+
+  /* blog grid */
+  .blog{padding:70px 0 100px}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.35s}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card-img{height:220px;overflow:hidden}
+  .card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .card:hover .card-img img{transform:scale(1.06)}
+  .card-body{padding:24px 24px 28px;display:flex;flex-direction:column;flex:1}
+  .card .meta{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-deep);margin-bottom:10px}
+  .card h2{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.2;margin-bottom:10px}
+  .card p{font-size:.94rem;color:var(--ink-soft);flex:1}
+  .card .more{margin-top:16px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-deep);font-weight:600}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--cream);padding:60px 0 30px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:18px}
+  footer p{opacity:.7;font-size:.9rem;margin-bottom:6px}
+  footer a{color:var(--brass)}
+  .copy{opacity:.5;font-size:.8rem;margin-top:18px}
+
+  @media(max-width:900px){
+    .menu{display:none}
+    .blog-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="mark">T</span>
+      <span><b>Toffee</b><span>Homestay · Ninh Bình</span></span>
+    </a>
+    <nav class="menu">
+      <a href="index.html#intro">About</a>
+      <a href="index.html#rooms">Rooms</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#location">Location</a>
+      <a href="blog.html">Guide Book</a>
+      <a href="index.html#booking">Booking</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ PAGE TITLE ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Toffee Guide Book</p>
+    <h1>Travel tips & local guides</h1>
+    <p>Stories, food guides and itineraries to help you make the most of your stay in the ancient capital.</p>
+  </div>
+</section>
+
+<!-- ============ BLOG LIST ============ -->
+<!--
+  ➤ CÁCH THÊM BÀI VIẾT MỚI VÀO DANH SÁCH:
+  Copy nguyên một khối <article class="card">...</article> bên dưới,
+  dán xuống ngay phía dưới, rồi sửa 4 thứ:
+    1. href="..."         → tên file bài viết mới (vd: blog-tam-coc.html)
+    2. <img src="...">    → ảnh bìa của bài
+    3. <span class="meta">→ chủ đề + ngày
+    4. <h2> và <p>        → tiêu đề + mô tả ngắn
+  Bài mới nên đặt LÊN TRÊN CÙNG để khách thấy bài mới nhất trước.
+-->
+<section class="blog">
+  <div class="wrap">
+    <div class="blog-grid">
+
+      <!-- ===== BÀI VIẾT 1 ===== -->
+      <article class="card">
+        <a href="blog-post-template.html" class="card-img">
+          <img src="https://placehold.co/600x400/1c2421/b08d4f?text=blog-1.jpg" alt="Bài viết 1">
+        </a>
+        <div class="card-body">
+          <span class="meta">Itinerary · 19 Jun 2026</span>
+          <h2>2 Days in Ninh Bình: The Perfect Itinerary</h2>
+          <p>From Trang An's emerald rivers to the climb up Hang Mua — here's how to spend two unforgettable days, starting right from our door.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- ===== BÀI VIẾT 2 ===== -->
+      <article class="card">
+        <a href="blog-food-guide.html" class="card-img">
+          <img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-cover.jpg" alt="Where to eat near Toffee Homestay">
+        </a>
+        <div class="card-body">
+          <span class="meta">Food Guide · 19 Jun 2026</span>
+          <h2>Where to Eat Near Toffee Homestay</h2>
+          <p>16 local restaurants and street-food spots near the homestay — goat meat, eel noodles, clay-pot rice and more, with addresses and maps.</p>
+          <a href="blog-food-guide.html" class="more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- ===== BÀI VIẾT 3 ===== -->
+      <article class="card">
+        <a href="blog-post-template.html" class="card-img">
+          <img src="https://placehold.co/600x400/1c2421/b08d4f?text=blog-3.jpg" alt="Bài viết 3">
+        </a>
+        <div class="card-body">
+          <span class="meta">Tips · 19 Jun 2026</span>
+          <h2>Getting Around Ninh Bình by Scooter</h2>
+          <p>Everything you need to know about renting a scooter, parking, and the most scenic routes to ride during your stay.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- ===== BÀI VIẾT 4 ===== -->
+      <article class="card">
+        <a href="blog-post-template.html" class="card-img">
+          <img src="https://placehold.co/600x400/1c2421/b08d4f?text=blog-4.jpg" alt="Bài viết 4">
+        </a>
+        <div class="card-body">
+          <span class="meta">Nature · 19 Jun 2026</span>
+          <h2>Best Time to Visit Tam Coc's Rice Fields</h2>
+          <p>The golden rice season is short but spectacular. Here's exactly when to come and where to get the best view from the water.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- ===== BÀI VIẾT 5 ===== -->
+      <article class="card">
+        <a href="blog-post-template.html" class="card-img">
+          <img src="https://placehold.co/600x400/1c2421/b08d4f?text=blog-5.jpg" alt="Bài viết 5">
+        </a>
+        <div class="card-body">
+          <span class="meta">Culture · 19 Jun 2026</span>
+          <h2>A Short History of Hoa Lư Ancient Capital</h2>
+          <p>Once the capital of Vietnam, Hoa Lư is just five minutes away. A quick guide to what you'll see and why it matters.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- ===== BÀI VIẾT 6 ===== -->
+      <article class="card">
+        <a href="blog-post-template.html" class="card-img">
+          <img src="https://placehold.co/600x400/1c2421/b08d4f?text=blog-6.jpg" alt="Bài viết 6">
+        </a>
+        <div class="card-body">
+          <span class="meta">Tips · 19 Jun 2026</span>
+          <h2>How to Get from Hanoi to Ninh Bình</h2>
+          <p>Train, bus or private car — the pros, cons and prices of every way to reach us from the capital.</p>
+          <a href="blog-post-template.html" class="more">Read more →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="mark">T</span>
+      <span><b>Toffee</b><span>Homestay · Ninh Bình</span></span>
+    </a>
+    <p>144 Trần Phú, Hoa Lư, Ninh Bình</p>
+    <p>Hotline / Zalo / WhatsApp: <a href="tel:0989309313">0989 309 313</a></p>
+    <p class="copy">© 2026 Toffee Homestay Ninh Bình. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
