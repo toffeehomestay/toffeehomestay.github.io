@@ -430,24 +430,26 @@
         <p class="note">Rooms are rated 5.0 on Airbnb · 100% response rate</p>
       </div>
     </div>
-    <div class="book-form">
-      <h3>Send a booking request</h3>
-      <p>Leave your details and we'll get back to you shortly to confirm availability.</p>
-      <div class="field"><label>Full name</label><input type="text" id="f-name" placeholder="Your name" required></div>
-      <div class="field"><label>Phone / Zalo / WhatsApp</label><input type="tel" id="f-phone" placeholder="e.g. 09xx xxx xxx" required></div>
-      <div class="field"><label>Booking date(s)</label><input type="text" id="f-date" placeholder="e.g. 12–14 Aug, 2 guests"></div>
-      <div class="field"><label>Note (optional)</label><textarea id="f-note" rows="3" placeholder="Room type, arrival time, requests..."></textarea></div>
-      <button type="button" class="btn btn-fill" id="f-submit">Send request</button>
-      <p class="form-note" id="f-status">We'll reply via your phone, Zalo or WhatsApp.</p>
-    </div>
+    <div>
+      <div class="book-form">
+        <h3>Send a booking request</h3>
+        <p>Leave your details and we'll get back to you shortly to confirm availability.</p>
+        <div class="field"><label>Full name</label><input type="text" id="f-name" placeholder="Your name" required></div>
+        <div class="field"><label>Phone / Zalo / WhatsApp</label><input type="tel" id="f-phone" placeholder="e.g. 09xx xxx xxx" required></div>
+        <div class="field"><label>Booking date(s)</label><input type="text" id="f-date" placeholder="e.g. 12–14 Aug, 2 guests"></div>
+        <div class="field"><label>Note (optional)</label><textarea id="f-note" rows="3" placeholder="Room type, arrival time, requests..."></textarea></div>
+        <button type="button" class="btn btn-fill" id="f-submit">Send request</button>
+        <p class="form-note" id="f-status">We'll reply via your phone, Zalo or WhatsApp.</p>
+      </div>
 
-    <div class="voucher">
-      <span class="vtag">★ Guest Reward</span>
-      <h3>Up to 40.000 VND in vouchers</h3>
-      <p>Leave a 5-star review with a comment or photo and get a voucher — do both platforms to earn both!</p>
-      <div class="vsteps">
-        <div class="vstep"><span class="vnum">1</span><span><b>20.000 VND</b> — review on Airbnb</span></div>
-        <div class="vstep"><span class="vnum">2</span><span><b>20.000 VND</b> — review on Google</span></div>
+      <div class="voucher">
+        <span class="vtag">★ Guest Reward</span>
+        <h3>Up to 40.000 VND in vouchers</h3>
+        <p>Leave a 5-star review with a comment or photo and get a voucher — do both platforms to earn both!</p>
+        <div class="vsteps">
+          <div class="vstep"><span class="vnum">1</span><span><b>20.000 VND</b> — review on Airbnb</span></div>
+          <div class="vstep"><span class="vnum">2</span><span><b>20.000 VND</b> — review on Google</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -503,7 +505,7 @@
     </div>
     <div class="guide-grid">
       <article class="gcard">
-        <a href="blog-food-guide.html" class="gcard-img"><img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/images/food-cover.jpg" alt="Where to eat near Toffee Homestay"></a>
+        <a href="blog-food-guide.html" class="gcard-img"><img src="https://raw.githubusercontent.com/toffeehomestay/toffeehomestay.github.io/main/food-cover.jpg" alt="Where to eat near Toffee Homestay"></a>
         <div class="gcard-body">
           <span class="meta">Food Guide</span>
           <h3>Where to Eat Near Toffee Homestay</h3>
@@ -640,6 +642,29 @@
   document.querySelectorAll('[data-img]').forEach(img=>{
     img.src = GH + img.getAttribute('data-img');
   });
+
+  // Ảnh chưa có trên GitHub -> hiện placeholder đẹp thay vì icon vỡ
+  const FALLBACK_IMG = "data:image/svg+xml;utf8," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">' +
+    '<rect width="400" height="300" fill="#f6ece0"/>' +
+    '<g fill="none" stroke="#c9a583" stroke-width="2">' +
+    '<rect x="130" y="105" width="140" height="100" rx="8"/>' +
+    '<circle cx="200" cy="150" r="22"/>' +
+    '<rect x="155" y="92" width="30" height="14" rx="3"/>' +
+    '</g>' +
+    '<text x="200" y="225" font-family="sans-serif" font-size="13" fill="#a4502e" text-anchor="middle">Photo coming soon</text>' +
+    '</svg>'
+  );
+  document.addEventListener('error', function(e){
+    const img = e.target;
+    if (img && img.tagName === 'IMG' && img.src.indexOf('raw.githubusercontent.com') !== -1 && !img.dataset.fallbackApplied) {
+      img.dataset.fallbackApplied = '1';
+      img.src = FALLBACK_IMG;
+      img.style.objectFit = 'contain';
+      img.style.background = '#f6ece0';
+    }
+  }, true);
+
   // Ảnh nền hero & booking
   (function(){
     const hero=document.querySelector('.hero-bg');
