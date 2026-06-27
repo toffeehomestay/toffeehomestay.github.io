@@ -29,19 +29,19 @@
   .btn-line{border-color:rgba(255,255,255,.55);color:#fff}
   .btn-line:hover{background:rgba(255,255,255,.12);border-color:#fff}
 
-  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s}
-  header.scrolled{background:rgba(251,248,242,.96);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(8px)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1200px;margin:0 auto}
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s;background:rgba(74,36,24,.96);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.25)}
+  header.scrolled{background:rgba(253,246,236,.97);box-shadow:0 2px 20px rgba(0,0,0,.12);backdrop-filter:blur(10px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;max-width:1280px;margin:0 auto}
   .brand{display:flex;align-items:center;gap:12px;color:#fff;transition:.35s}
   header.scrolled .brand{color:var(--ink)}
-  .brand .mark{width:42px;height:42px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;font-weight:600;flex:none}
-  .brand b{font-family:var(--serif);font-size:1.25rem;font-weight:600;letter-spacing:.02em;line-height:1.05;display:block}
-  .brand span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+  .brand .mark{width:50px;height:50px;border:2px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.5rem;font-weight:700;flex:none}
+  .brand b{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:.04em;line-height:1.05;display:block}
+  .brand span{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
   .menu{display:flex;align-items:center;gap:34px}
-  .menu a{font-size:.82rem;letter-spacing:.04em;color:#fff;transition:.3s;font-weight:400}
-  header.scrolled .menu a{color:var(--ink-soft)}
+  .menu a{font-size:.9rem;letter-spacing:.06em;color:#fff;transition:.3s;font-weight:500}
+  header.scrolled .menu a{color:var(--ink-soft)} header.scrolled .brand{color:var(--ink)}
   .menu a:hover{color:var(--brass)}
-  .nav-call{font-weight:600;letter-spacing:.04em}
+  .nav-call{font-weight:700;letter-spacing:.06em;background:var(--brass);color:#fff!important;padding:.5rem 1.1rem;border-radius:40px}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer}
   .burger span{width:26px;height:2px;background:#fff;transition:.3s}
   header.scrolled .burger span{background:var(--ink)}
@@ -154,7 +154,20 @@
   .policy li b{font-weight:600}
   .policy .note{font-size:.84rem;color:var(--sage);margin-top:14px}
 
-  .gallery{padding:120px 0 60px}
+  .gallery{padding:100px 0 80px}
+  /* ---- gallery strip scroll ---- */
+  .gal-strip-wrap{position:relative;margin-top:2rem}
+  .gal-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:none}
+  .gal-strip::-webkit-scrollbar{display:none}
+  .gal-strip img{flex:0 0 280px;height:200px;object-fit:cover;border-radius:12px;scroll-snap-align:start;cursor:zoom-in;filter:saturate(.95);transition:.4s}
+  .gal-strip img:hover{filter:saturate(1.1) brightness(1.04);transform:scale(1.02)}
+  .gal-strip-nav{display:flex;gap:10px;margin-top:14px;justify-content:center}
+  .gsn{width:40px;height:40px;border-radius:50%;border:2px solid var(--brass);background:transparent;color:var(--brass);font-size:1.2rem;cursor:pointer;display:grid;place-items:center;transition:.3s}
+  .gsn:hover{background:var(--brass);color:#fff}
+  .gal-dots{display:flex;gap:6px;align-items:center;margin:0 12px}
+  .gal-dot{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s;cursor:pointer}
+  .gal-dot.active{background:var(--brass);transform:scale(1.3)}
+  @media(max-width:600px){.gal-strip img{flex:0 0 72vw;height:160px}}
   .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:2.5rem}
   .gal-grid img{width:100%;height:100%;object-fit:cover;border-radius:12px;transition:.5s;filter:saturate(.95)}
   .gal-grid img:hover{filter:saturate(1.1) brightness(1.03)}
@@ -348,7 +361,7 @@
         <div class="room-img" data-room="room02"><span class="room-tag">Classic</span><img data-img="room02-1.jpg" alt="TOFI 02 — classic room"><span class="room-count">⊞ <span class="rc-n">5</span> photos</span></div>
         <div class="room-body">
           <h3>TOFI 02 · The Classic</h3>
-          <p class="feat">Up to 4 guests · 1 bedroom · 1 bed · Private bathroom · Entire home</p>
+          <p class="feat">Up to 2 guests · 1 bedroom · 1 bed · Private bathroom · Entire home</p>
           <a class="room-cta" href="https://airbnb.com.vn/h/tofi-02" target="_blank" rel="noopener">Book on Airbnb →</a>
         </div>
       </article>
@@ -356,7 +369,7 @@
         <div class="room-img" data-room="room03"><span class="room-tag">Central</span><img data-img="room03-1.jpg" alt="TOFI 03 — central room"><span class="room-count">⊞ <span class="rc-n">5</span> photos</span></div>
         <div class="room-body">
           <h3>TOFI 03 · The Central</h3>
-          <p class="feat">1 bedroom · 2 beds · Shared bathroom · Bright arched window</p>
+          <p class="feat">Up to 4 guests · 1 bedroom · 2 beds · Private bathroom · Bright arched window</p>
           <a class="room-cta" href="https://airbnb.com.vn/h/tofi-03" target="_blank" rel="noopener">Book on Airbnb →</a>
         </div>
       </article>
@@ -465,6 +478,36 @@
       <img class="wide" data-img="gallery-3.jpg" alt="Toffee Homestay space">
       <img data-img="gallery-4.jpg" alt="Toffee Homestay space">
       <img class="wide" data-img="gallery-5.jpg" alt="Toffee Homestay space">
+    </div>
+
+    <div class="gal-strip-wrap">
+      <div class="gal-strip" id="galStrip">
+      <img data-img="gallery-6.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-7.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-8.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-9.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-10.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-11.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-12.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-13.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-14.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-15.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-16.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-17.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-18.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-19.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-20.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-21.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-22.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-23.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-24.jpg" alt="Toffee Homestay">
+      <img data-img="gallery-25.jpg" alt="Toffee Homestay">
+      </div>
+      <div class="gal-strip-nav">
+        <button class="gsn" id="galPrev" aria-label="Previous">‹</button>
+        <div class="gal-dots" id="galDots"></div>
+        <button class="gsn" id="galNext" aria-label="Next">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -719,6 +762,44 @@
     const galImgs=[...document.querySelectorAll('.gal-grid img')];
     const galList=galImgs.map(im=>im.getAttribute('data-img'));
     galImgs.forEach((im,i)=>{im.style.cursor='zoom-in';im.addEventListener('click',()=>lbOpen(galList,i));});
+  })();
+
+  // Gallery strip (gallery-6 đến gallery-25)
+  (function(){
+    const strip=document.getElementById('galStrip');
+    const dotsWrap=document.getElementById('galDots');
+    if(!strip) return;
+    const imgs=[...strip.querySelectorAll('img')];
+    const GH_=GH; // dùng cùng GH đã khai báo
+
+    // Tạo 5 dots (mỗi dot đại diện ~4 ảnh)
+    const DOT_COUNT=5;
+    const dots=[];
+    for(let i=0;i<DOT_COUNT;i++){
+      const d=document.createElement('span');
+      d.className='gal-dot'+(i===0?' active':'');
+      d.addEventListener('click',()=>{
+        strip.scrollLeft=(strip.scrollWidth/DOT_COUNT)*i;
+      });
+      dotsWrap.appendChild(d); dots.push(d);
+    }
+    // Cập nhật dot khi scroll
+    strip.addEventListener('scroll',()=>{
+      const pct=strip.scrollLeft/(strip.scrollWidth-strip.clientWidth||1);
+      const idx=Math.round(pct*(DOT_COUNT-1));
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    });
+    // Nút prev/next cuộn 3 ảnh mỗi lần
+    const step=()=>Math.min(strip.clientWidth, 280*3+12*2);
+    document.getElementById('galPrev').addEventListener('click',()=>strip.scrollBy({left:-step(),behavior:'smooth'}));
+    document.getElementById('galNext').addEventListener('click',()=>strip.scrollBy({left:step(),behavior:'smooth'}));
+
+    // Gắn ảnh strip vào lightbox (nối tiếp gallery-1..5)
+    const galList=[...document.querySelectorAll('.gal-grid img')].map(im=>im.getAttribute('data-img'));
+    imgs.forEach((im,i)=>{
+      im.style.cursor='zoom-in';
+      im.addEventListener('click',()=>lbOpen([...galList,...imgs.map(x=>x.getAttribute('data-img'))],galList.length+i));
+    });
   })();
 
   document.getElementById('lbClose').addEventListener('click',lbClose);
